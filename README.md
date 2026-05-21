@@ -32,3 +32,7 @@ Use setu to scan the current directory in strict mode
 
 To scan a different directory type its path:
 `./setu-cli ./docs`
+
+## CI Examples
+
+To use this as part of your CI see [the workflow used by this repository](https://github.com/tom-devv/Setu/blob/main/.github/workflows/markdown-checker.yml)
