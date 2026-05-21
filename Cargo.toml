@@ -1,7 +1,13 @@
 [package]
 name = "setu-cli"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
+description = "A quick markdown link checker"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/tom-devv/Setu"
+keywords = ["markdown", "links", "cli", "async"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 futures = "0.3.32"
