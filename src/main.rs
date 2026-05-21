@@ -3,12 +3,8 @@ use std::process;
 use colored::Colorize;
 use futures::future::join_all;
 
-use crate::{checker::MarkdownCheckResult, finder::get_markdowns, parser::parse_markdown};
 use clap::Parser;
-
-mod checker;
-mod finder;
-mod parser;
+use setu_cli::{MarkdownCheckResult, get_markdowns, parse_markdown};
 
 #[derive(Parser, Debug)]
 #[command(name = "setu")]
