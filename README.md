@@ -1,4 +1,4 @@
-[![Crates.io](https://img.shields.io/crates/v/setu-cli.svg)](https://crates.io/crates/setu-cli)
+[![Crates.io](https://img.shields.io/crates/v/setu-cli.svg)](https://crates.io/api/v1/crates/setu-cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # Setu - CLI Markdown Link Checker
 
