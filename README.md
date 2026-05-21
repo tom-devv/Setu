@@ -1,5 +1,8 @@
+[![Crates.io](https://img.shields.io/crates/v/setu-cli.svg)](https://crates.io/crates/setu-cli)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # Setu - CLI Markdown Link Checker
 
+`setu` scans your documentation, extracts links, and validates both local file paths and remote URLs concurrently so your docs never suffer from bit rot or broken pathways.
 
 ### Motivation
 After working on countless projects that all use markdown I find myself running into the same issue, are all my links valid?
@@ -35,4 +38,10 @@ To scan a different directory type its path:
 
 ## CI Examples
 
-To use this as part of your CI see [the workflow used by this repository](https://github.com/tom-devv/Setu/blob/main/.github/workflows/markdown-checker.yml)
+To use this as part of your CI see [the workflow used by this repository](https://github.com/tom-devv/Setu/blob/main/.github/workflows/markdown-checker.yml).
+
+When running `setu-cli` as part of your CI, you should run it in `--strict` mode to terminate the program with exit code 1.
+
+## 📄 License
+
+This project is licensed under the [MIT License](https://opensource.org/license/mit)
