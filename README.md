@@ -1,4 +1,6 @@
 [![Crates.io](https://img.shields.io/crates/v/setu-cli.svg)](https://crates.io/api/v1/crates/setu-cli)
+![Crates.io Total Downloads](https://img.shields.io/crates/d/setu-cli)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/tom-devv/setu-cli/test.yml?label=tests)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # Setu - CLI Markdown Link Checker
 
