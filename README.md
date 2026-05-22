@@ -13,7 +13,9 @@ A simple typo could redirect users to a dead website or a missing asset and thes
 
 Using cargo:
 
-`cargo install setu-cli`
+```shell
+cargo install setu-cli
+```
 
 ## Usage:
 
@@ -31,10 +33,31 @@ Options:
 
 ## Examples:
 Use setu to scan the current directory in strict mode
-`./setu-cli -s`
+```shell
+setu-cli -s
+```
 
 To scan a different directory type its path:
-`./setu-cli ./docs`
+```shell
+setu-cli ./docs
+```
+
+### Concerns Argument
+
+Setu treats remote URL's as OK if _something_ is returned from them, even if thats a `404`, because the site is still _reachable_.
+You can flag specific response codes as concerns using the `--concerns` argument: 
+
+```shell
+setu-cli --concerns 404,500
+```
+
+For example under these rules:
+
+`404 - Faulty`
+
+`401 - Valid`
+
+`500 - Faulty`
 
 ## CI Examples
 
