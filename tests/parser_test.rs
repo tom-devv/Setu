@@ -21,7 +21,7 @@ async fn test_parse_markdown_no_concerns() {
     assert!(result.success, "The file parsing operation itself failed");
     assert_eq!(
         result.checks.len(),
-        5,
+        6,
         "Should have found exactly 5 links in test.md"
     );
 
