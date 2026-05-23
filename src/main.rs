@@ -13,6 +13,9 @@ struct SetuArgs {
     #[arg(default_value = ".")]
     target_path: String,
 
+    #[arg(short, long, default_value = "false")]
+    view_all: bool,
+
     #[arg(short, long, value_delimiter = ',', default_value = "404")]
     concerns: Option<Vec<u16>>,
 
@@ -33,7 +36,7 @@ async fn main() {
     let results: Vec<MarkdownCheckResult> = join_all(tasks).await;
 
     for result in &results {
-        println!("{}\n", result);
+        println!("{}\n", result.display_with_config(setu_args.view_all));
     }
 
     let malformed_links = results

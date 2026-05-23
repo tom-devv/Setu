@@ -83,17 +83,40 @@ pub struct LinkCheckResult {
     pub status: LinkStatus,
 }
 
+pub struct MarkdownCheckResultFormatter<'a> {
+    result: &'a MarkdownCheckResult,
+    show_valid: bool,
+}
+
+impl MarkdownCheckResult {
+    pub fn display_with_config(&self, show_valid: bool) -> MarkdownCheckResultFormatter<'_> {
+        MarkdownCheckResultFormatter {
+            result: self,
+            show_valid,
+        }
+    }
+}
+
 #[derive(Debug)]
 pub struct MarkdownCheckResult {
     pub success: bool,
     pub checks: Vec<LinkCheckResult>,
 }
 
-impl fmt::Display for MarkdownCheckResult {
+impl<'a> fmt::Display for MarkdownCheckResultFormatter<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        if self.success {
-            for check in &self.checks {
+        if self.result.success {
+            for check in &self.result.checks {
                 match &check.status {
+                    checker::LinkStatus::Local(LocalLinkStatus::Valid) if self.show_valid => {
+                        write!(
+                            f,
+                            "{} Valid local link {} at {}\n",
+                            "OK".green().bold(),
+                            check.raw_link.cyan(),
+                            check.source_file.to_string_lossy().green(),
+                        )?;
+                    }
                     checker::LinkStatus::Local(status) if *status != LocalLinkStatus::Valid => {
                         write!(
                             f,
